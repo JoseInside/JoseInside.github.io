@@ -5,11 +5,11 @@ html {
 
 body {
   padding: 0;
-  margin: 0;
+  margin: 100;
   font-family: Courier, 'Courier New', monospace;
   font-size: 1.6rem;
-  background: #fff;
-  color: #000;
+  background-image: url(web/stars.png);
+  color: #020;
 }
 
 a {
@@ -20,11 +20,108 @@ main {
   margin: 2rem 0;
   text-align: center;
 }
+h1 {
+  text-align: center;
+  background-color: #fff;
+}
+ul {
+    list-style-type: none;
+    margin: 50;
+    padding: 500;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+li {
+    float: right;
+    text-align: left;
+    color: white;
+    text-decoration: none;
+}
+
+h2 {
+    float: left;
+    display: block;
+    color: black;
+    background-color: #B52F7B; /* Violeta-Fucsia */ 
+    text-align: center;
+    text-decoration: none;
+}
+section { 
+    width: 30%;
+    display: block;
+    font-size: 15px;
+    float: left;
+    text-align: left;
+    margin-bottom: 10;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+h3 {
+    /*float: left;*/
+    display: block;
+    color: black;
+    background-color: #FFFFFF; 
+    text-align: left;
+    text-decoration: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color:black;
+    background-color: #FFFFFF;
+}
 
 #game {
-  border: 1px solid #333;
+  border: 6px solid white;
+  margin-bottom: 200px;
+}
+
+article {
+
+  display: block;
+  color: white;
+  text-align: left;
+  width: 50%;
+  overflow: hidden;
+  background-color: black;
+  margin-left: 20px;
+  margin-bottom: 100px;
+}
+#controls {
+  line-height: 300%;
+  text-align: center;
+}
+#left, #right, #a, #d, #w, #up {
+  width: 5%;
+  height: 5%;
+}
+
+#art1 {
+  line-height: 200%;
+}
+#art2{
+  text-align: left;
+  margin-left: 50%;
 }
 
 footer {
-  text-align: center;
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding: 16px;
+    text-decoration: none;
+}
+
+footer p {
+  background-color: black;
 }
