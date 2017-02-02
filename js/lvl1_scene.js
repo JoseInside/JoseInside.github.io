@@ -251,17 +251,17 @@ var PlayScene = {
         
     isJumping: function(collisionWithTilemap){
         return this.canJump(collisionWithTilemap) && 
-            this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR);
+            (this.game.input.keyboard.isDown(Phaser.Keyboard.UP) || this.game.input.keyboard.isDown(Phaser.Keyboard.W));
     },
         
     GetMovement: function(){
         var movement = Direction.NONE
         //Move Right
-        if(this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
+        if(this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT) || this.game.input.keyboard.isDown(Phaser.Keyboard.D)){
             movement = Direction.RIGHT;
         }
         //Move Left
-        if(this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
+        if(this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT) || this.game.input.keyboard.isDown(Phaser.Keyboard.A)){
             movement = Direction.LEFT;
         }
         return movement;

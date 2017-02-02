@@ -14,7 +14,7 @@ var MenuScene = {
                                         'logo');
         logo.anchor.setTo(0.5, 0.5);
         var buttonStart = this.game.add.button(this.game.world.centerX, 
-                                               this.game.world.centerY + 250, 
+                                               this.game.world.centerY + 240, 
                                                'button', 
                                                this.actionOnClick, 
                                                this, 2, 1, 0);
@@ -25,10 +25,17 @@ var MenuScene = {
         textStart.anchor.set(0.5);
         buttonStart.addChild(textStart);
 
-        this.intro_music = this.game.add.audio('intro');
-        this.intro_music.loop = true;
-        this.intro_music.play();
-
+        var button2 = this.game.add.button(this.game.world.centerX, 
+                                               this.game.world.centerY + 150, 
+                                               'button', 
+                                               this.levelSelector, 
+                                               this, 2, 1, 0);
+        button2.anchor.set(0.5);
+        var text2 = this.game.add.text(0, 0, "Level Selector");
+        text2.addColor("#3A44BF", 0);
+        text2.font = 'Sniglet';
+        text2.anchor.set(0.5);
+        button2.addChild(text2);
     },
     
     actionOnClick: function(){
@@ -36,9 +43,8 @@ var MenuScene = {
         this.game.state.start('preloader');
     }, 
 
-    shutdown: function() {
-
-      this.intro_music.destroy();
+    levelSelector: function() {
+        this.game.state.start('levelSelector');
     }
 
 };

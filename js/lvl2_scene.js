@@ -92,7 +92,7 @@ var Play2Scene = {
 
       //*** ASSETS JUGADOR ***
       //this._arno = this.game.add.sprite(100, 1400, 'Idle__000');
-      this._arno = this.game.add.sprite(712, 550, 'Idle__000');
+      this._arno = this.game.add.sprite(100, 1400, 'Idle__000');
       this._arno.scale.setTo(1.08);
       this._arno.anchor.setTo(0.5, 1);
       console.log(this._arno)
@@ -314,17 +314,17 @@ var Play2Scene = {
         
     isJumping: function(collisionWithTilemap){
         return this.canJump(collisionWithTilemap) && 
-            this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR);
+            (this.game.input.keyboard.isDown(Phaser.Keyboard.UP) || this.game.input.keyboard.isDown(Phaser.Keyboard.W));
     },
         
     GetMovement: function(){
         var movement = Direction.NONE
         //Move Right
-        if(this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
+        if(this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT) || this.game.input.keyboard.isDown(Phaser.Keyboard.D)){
             movement = Direction.RIGHT;
         }
         //Move Left
-        if(this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
+        if(this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT) || this.game.input.keyboard.isDown(Phaser.Keyboard.A)){
             movement = Direction.LEFT;
         }
         return movement;

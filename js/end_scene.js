@@ -35,7 +35,6 @@ var EndScene = {
     },
 
     shutdown: function() {
-
         this.final_music.destroy();
         this._arno.destroy();
     }

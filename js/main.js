@@ -7,7 +7,7 @@ var GameOver = require('./gameover_scene');
 var MenuScene = require('./menu_scene');
 var EndScene = require('./end_scene');
 var Play2Scene = require('./lvl2_scene');
-
+var LevelSelector = require('./level_selector');
 //  The Google WebFont Loader will look for this object, so create it before loading the script.
 
 var BootScene = {
@@ -15,23 +15,23 @@ var BootScene = {
     // load here assets required for the loading screen
     this.game.load.image('preloader_bar', 'images/preloader_bar.png');
     this.game.load.image('button', 'images/ini_button2.png');
-    this.game.load.image('logo', 'images/fondo2.png');
+    this.game.load.image('logo', 'images/fondo_menu.png');
     this.game.load.image('fondo_lvl1', 'images/background.png');
     this.game.load.image('fondo_lvl2', 'images/lvl2_back.png');
     this.game.load.image('end_back', 'images/end_back.png');
     this.game.load.image('final_arno', 'images/final_sprite.png');
-    this.game.load.audio('intro', 'music/intro_theme.mp3');
     this.game.load.audio('final', 'music/final_music.wav');
   },
 
   create: function () {
     this.game.state.start('menu');
   }
+
 };
 
 
 var PreloaderScene = {
-  preload: function (bool) {
+  preload: function () {
     this.loadingBar = this.game.add.sprite(100,300, 'preloader_bar');
     this.loadingBar.anchor.setTo(0, 0.5); 
     this.game.load.setPreloadSprite(this.loadingBar);
@@ -44,7 +44,7 @@ var PreloaderScene = {
       if(this.game.nextLvl === 1){
         this.game.load.image('tiles','images/tileset.png');
         this.game.load.tilemap('tilemap_lvl1', 'maps/lvl1.json', null, Phaser.Tilemap.TILED_JSON);
-        this.game.load.audio('lvl1_music','music/mushroom_theme.mp3');
+        this.game.load.audio('lvl1_music','music/lvl1_music.mp3');
       }
       else if (this.game.nextLvl === 2){
         this.game.load.image('wings', 'images/wings.png');
@@ -113,7 +113,7 @@ function init () {
       game.state.add('menu', MenuScene);
       game.state.add('end', EndScene);
       game.state.add('lvl2',Play2Scene);
-
+      game.state.add('levelSelector', LevelSelector);
       game.state.start('boot');
       
 
@@ -121,5 +121,6 @@ function init () {
 
 
 window.onload = function () {
-       WebFont.load(wfconfig); 
+  
+    WebFont.load(wfconfig); 
 };
